@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-const TodoForm = () => {
+const TodoForm = ({ submitTodo }) => {
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
   
   const handleSubmit = event => {
     event.preventDefault();
+    submitTodo(name, description);
   };
 
   return (
@@ -18,6 +19,8 @@ const TodoForm = () => {
   );
 };
 
-TodoForm.propTypes = {};
+TodoForm.propTypes = {
+  submitTodo: PropTypes.func.isRequired
+};
 
 export default TodoForm;

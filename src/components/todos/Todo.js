@@ -6,6 +6,7 @@ const Todo = ({ name, description }) => (
     <h2>Name: {name}</h2>
     <p>Description: {description}</p>
     <input type='checkbox' name='isComplete' />
+    <button>Delete</button>
   </section>
 );
 
