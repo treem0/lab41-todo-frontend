@@ -2,16 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Todo from './Todo';
 
-const Todos = () => {
+const Todos = ({ todos, submitDelete }) => {
 
-  const todos = [{
-    name: 'This App',
-    description: 'Full stack'
-  }];
 
   const todoElements = todos.map(todo => (
-    <li key={todo.name} >
-      <Todo {...todo} />
+    <li key={todo._id} >
+      <Todo {...todo} submitDelete={submitDelete} />
     </li>
   ));
   return (
@@ -22,6 +18,9 @@ const Todos = () => {
   );
 };
 
-Todos.propTypes = {};
+Todos.propTypes = {
+  todos: PropTypes.array.isRequired,
+  submitDelete: PropTypes.func.isRequired
+};
 
 export default Todos;
