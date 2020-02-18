@@ -22,7 +22,8 @@ const TodoApp = () => {
 
   const handleEdit = id => {
     patchTodo(id)
-      .setTodos(prevState => [...prevState]);
+      .then(edittedTodo => setTodos(prevState => [...prevState, edittedTodo]));
+    //   .setTodos(prevState => [...prevState]);
   };
   
   useEffect(() => {

@@ -8,7 +8,7 @@ const Todo = ({ name, description, submitDelete, _id }) => {
 
   const handleSubmit = event => {
     event.preventDefault();
-    patchTodo(description);
+    patchTodo(_id);
   };
   return (
     <section>
